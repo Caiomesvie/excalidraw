@@ -346,7 +346,7 @@ const LayerUI = ({
             )}
 
     <div>
-      <InactivityAlert timeout={5000} /> {/* show an alert if you stay inactive */}
+      <InactivityAlert timeout={30000} /> {/* show an alert if you stay inactive */}
     </div>
 
             {renderTopRightUI?.(device.editor.isMobile, appState)}
