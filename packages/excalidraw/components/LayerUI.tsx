@@ -63,6 +63,7 @@ import ElementLinkDialog from "./ElementLinkDialog";
 
 import "./LayerUI.scss";
 import "./Toolbar.scss";
+import { InactivityAlert } from "./InactivityAlert"
 
 interface LayerUIProps {
   actionManager: ActionManager;
@@ -342,6 +343,11 @@ const LayerUI = ({
                 userToFollow={appState.userToFollow?.socketId || null}
               />
             )}
+
+    <div>
+      <InactivityAlert timeout={5000} /> {/* show an alert if you stay inactive */}
+    </div>
+
             {renderTopRightUI?.(device.editor.isMobile, appState)}
             {!appState.viewModeEnabled &&
               appState.openDialog?.name !== "elementLinkSelector" &&
